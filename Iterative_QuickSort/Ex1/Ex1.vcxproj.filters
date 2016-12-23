@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Recursive.h">
+    <ClInclude Include="General.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

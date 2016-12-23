@@ -2,8 +2,8 @@
 #include <time.h>
 #include <iostream>
 
-#ifndef _RECURSIVE_H_
-#define _RECURSIVE_H_
+#ifndef _GENERAL_H_
+#define _GENERAL_H_
 void chooseRandomPivot(int arr[], int size);
 int partition(int arr[], int left, int right);
 void recQuickSort(int arr[], int left, int right);

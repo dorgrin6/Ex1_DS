@@ -1,4 +1,4 @@
-#include "Recursive.h"
+#include "General.h"
 using namespace  std;
 
 
@@ -47,10 +47,10 @@ int partition(int arr[], int left, int right){
 				nonPivot++;
 			}
 			else{  // pVal < arr[nonPivot]
-				
 				nonPivot--;
 			}
 		}
+
 		//pivot is after nonPivot in array
 		else{ 
 			if (pVal > arr[nonPivot]){

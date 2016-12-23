@@ -114,7 +114,7 @@
     <ClCompile Include="recursive.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Recursive.h" />
+    <ClInclude Include="General.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
