@@ -115,6 +115,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="General.h" />
+    <ClInclude Include="ItemType.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
