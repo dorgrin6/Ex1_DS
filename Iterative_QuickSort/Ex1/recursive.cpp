@@ -3,19 +3,18 @@ using namespace  std;
 
 
 // this function should be included in a shared general header where both algorithm can use
-void choosePivot(int arr[],int size){ 
+void chooseRandomPivot(int arr[],int size){ 
 	int randIndex; // random index to choose
 	srand(time(nullptr));
 
-	cout << "before p swap:" << endl;
-	printArr(arr, size);
-
 	randIndex = rand() % size;
-	swap(arr[0], arr[randIndex]);
+	
+	swap(arr[size], arr[randIndex]);
 
-	cout << "after p swap:" << endl;
-	printArr(arr, size);
+	//TODO:remove:
+	cout << "random element is:" << arr[randIndex] << endl; 
 }
+
 
 void printArr(int arr[],int size){
 	for (int i = 0; i<size; i++) {
@@ -25,60 +24,57 @@ void printArr(int arr[],int size){
 }
 
 
-void swap(int *p1, int *p2) {
-	int tmp = *p1;
-	*p1 = *p2;
-	*p2 = tmp;
+void swap(int &p1, int&p2) {
+	int tmp = p1;
+	p1 = p2;
+	p2 = tmp;
 }
 
-int partition(int arr[], int low, int high)
-{
-	int pivot = arr[high];    // pivot
-	int i = (low - 1);  // Index of smaller element
+int partition(int arr[], int left, int right){
+	int pivot = left; // index of pivot
+	int nonPivot = right; // index of comparision element
+	int pVal; // pivot value
 
-	for (int j = low; j <= high - 1; j++)
-	{
-		// If current element is smaller than or
-		// equal to pivot
-		if (arr[j] <= pivot)
-		{
-			i++;    // increment index of smaller element
-			swap(&arr[i], &arr[j]);
+	chooseRandomPivot(arr + left, right - left);//switch pivot with random
+	pVal = arr[left]; // pivot value
+
+	while (pivot != nonPivot){
+		//pivot is before nonPivot in array
+		if (pivot < nonPivot){
+			if (pVal > arr[nonPivot]){
+				swap(arr[pivot], arr[nonPivot]); //swap value
+				swap(pivot, nonPivot); // swap index
+				nonPivot++;
+			}
+			else{  // pVal < arr[nonPivot]
+				
+				nonPivot--;
+			}
 		}
-	}
-	swap(&arr[i + 1], &arr[high]);
-	return (i + 1);
+		//pivot is after nonPivot in array
+		else{ 
+			if (pVal > arr[nonPivot]){
+				nonPivot++;
+			}
+			else{ // pVal < arr[nonPivot]
+				swap(arr[pivot], arr[nonPivot]); //swap value
+				swap(pivot, nonPivot); //swap index
+				nonPivot--;
+			}
+		}
+	}//while
+
+	return pivot;
 }
 
 void recQuickSort(int arr[], int left, int right){
-	/* pi is partitioning index, arr[p] is now
-	at right place */
-	int pi = partition(arr, left, right);
-
+	int p;//pivot index
 	if (left < right){
-		// Separately sort elements before
-		// partition and after partition
-		recQuickSort(arr, left, pi - 1);
-		recQuickSort(arr, pi + 1, right);
-	}
-}
+		//partition left and right of pivot
+		p = partition(arr, left, right);
 
-
-/* The main function that implements QuickSort
-arr[] --> Array to be sorted,
-low  --> Starting index,
-high  --> Ending index */
-void quickSort(int arr[], int low, int high)
-{
-	if (low < high)
-	{
-		/* pi is partitioning index, arr[p] is now
-		at right place */
-		int pi = partition(arr, low, high);
-
-		// Separately sort elements before
-		// partition and after partition
-		quickSort(arr, low, pi - 1);
-		quickSort(arr, pi + 1, high);
+		//recursively sort each side
+		recQuickSort(arr, left, p - 1);
+		recQuickSort(arr, p + 1, right);
 	}
 }

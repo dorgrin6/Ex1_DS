@@ -19,13 +19,16 @@ void main(){
 		cin >> arr[i];
 	}
 
+	cout << "Before sort\n";
 	printArr(arr, n);
 
 	recQuickSort(arr, 0, n-1);
 
+
+	cout << "After sort\n";
 	printArr(arr, n);
 	
 	cout << "Ended\n";
-	getchar(); getchar(); getchar(); getchar();
+	getchar();	getchar();	getchar();
 	delete[] arr;
 }
