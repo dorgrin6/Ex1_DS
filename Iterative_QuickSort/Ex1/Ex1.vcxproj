@@ -112,6 +112,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="recursive.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="General.h" />

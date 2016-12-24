@@ -2,17 +2,14 @@
 using namespace  std;
 
 
-// this function should be included in a shared general header where both algorithm can use
+
 void chooseRandomPivot(int arr[],int size){ 
 	int randIndex; // random index to choose
-	srand(time(nullptr));
+	srand((unsigned int) time(nullptr));
 
 	randIndex = rand() % size;
 	
 	swap(arr[size], arr[randIndex]);
-
-	//TODO:remove:
-	cout << "random element is:" << arr[randIndex] << endl; 
 }
 
 

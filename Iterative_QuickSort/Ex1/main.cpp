@@ -4,9 +4,11 @@
  */
 #include <iostream>
 #include "General.h"
+#include "Stack.h"
 using namespace  std;
 
 void main(){
+	/*
 	int *arr; // array to sort
 	int n; // size of arr
 
@@ -31,4 +33,12 @@ void main(){
 	cout << "Ended\n";
 	getchar();	getchar();	getchar();
 	delete[] arr;
+	*/
+
+	Stack s;
+	ItemType item;
+	item.setLine(1);
+	item.setValue(2);
+	s.push(&item);
+	s.printStack();
 }
