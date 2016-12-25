@@ -110,11 +110,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GeneralFunctions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeneralFunctions.h" />
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="ItemType.h" />
     <ClInclude Include="Stack.h" />

@@ -4,7 +4,7 @@
  */
 #include <iostream>
 #include "QuickSort.h"
-#include "Stack.h"
+#include "GeneralFunctions.h"
 using namespace  std;
 
 void main(){

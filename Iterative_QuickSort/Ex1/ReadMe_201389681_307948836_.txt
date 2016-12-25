@@ -1,0 +1,22 @@
+~~~~~~README - Recursive vs. Iterative QuickSort~~~~~~
+Data Structures course, semeter A, exercise 1.
+
+Programmers:
+Dor Grinshpan, I.D.201389681, Group B
+Idan Goor, I.D.307948836, Group B
+
+Date of submission: 01/01/2017
+
+Type of compiler: Visual Studio 2015
+
+
+
+קורס מבני נתונים, סמסטר א, תרגיל תכנות מספר 1
+
+מגישים:
+דור גרינשפן, ת.ז. 201389681, קבוצה ב
+עידן גור, ת.ז. 307948836, קבוצה ב
+
+תאריך הגשה: 01/01/2017
+
+קומפיילר: ויזואל סטודיו 2015

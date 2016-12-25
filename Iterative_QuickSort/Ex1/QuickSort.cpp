@@ -1,6 +1,4 @@
 #include "QuickSort.h"
-using namespace  std;
-
 
 
 void chooseRandomPivot(int arr[],int size){ 
@@ -11,15 +9,6 @@ void chooseRandomPivot(int arr[],int size){
 	
 	swap(arr[size], arr[randIndex]);
 }
-
-
-void printArr(int arr[],int size){
-	for (int i = 0; i<size; i++) {
-		cout << arr[i] << " ";
-	}
-	cout << "\n";
-}
-
 
 void swap(int &p1, int&p2) {
 	int tmp = p1;
