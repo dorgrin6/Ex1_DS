@@ -1,4 +1,4 @@
-#include "General.h"
+#include "QuickSort.h"
 using namespace  std;
 
 
@@ -74,4 +74,48 @@ void recQuickSort(int arr[], int left, int right){
 		recQuickSort(arr, left, p - 1);
 		recQuickSort(arr, p + 1, right);
 	}
+}
+
+void itrQuickSort(int arr[], int left, int right) {
+
+	Stack S;
+	ItemType Curr (left, right,0, START);
+	bool returnFromRecursion = false; //holds 'true' if we suppose to go to the previous recursion call, 'false' else
+	int p; //holds the index of partition
+
+	do {
+		if (returnFromRecursion) //if we suppose to go to the previous recursion call, it pops the last data from stack
+			Curr = S.pop();
+		if (Curr.getLine() == START) {
+			if (Curr.getLeft() >= Curr.getRight()) //the recursion call has reached to its stopping condition
+				returnFromRecursion = true;
+			else {
+				p = partition(arr, Curr.getLeft(), Curr.getRight());
+				Curr.setPivot(p);
+				//saving the data of the current recursion call:
+				Curr.setLine(AFTER_FIRST);
+				S.push(Curr);
+				//getting ready for the next recursion call:
+				Curr.setRight(p - 1);
+				Curr.setLine(START);
+				returnFromRecursion = false;
+			}
+		}//if
+
+		else if (Curr.getLine() == AFTER_FIRST) {
+			p = Curr.getPivot();
+			//saving the data of the current recursion call:
+			Curr.setLine(AFTER_SECOND);
+			S.push(Curr);
+			//getting ready for the next recursion call:
+			Curr.setLeft(p + 1);
+			Curr.setLine(START);
+			returnFromRecursion = false;
+		}//if
+
+		else if (Curr.getLine() == AFTER_SECOND) {
+			returnFromRecursion = true;
+		}//if
+	}
+	while (!S.isEmpty());
 }

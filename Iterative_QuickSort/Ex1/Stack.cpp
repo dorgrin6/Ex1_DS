@@ -1,15 +1,6 @@
 #include "Stack.h"
 #include <iostream>
 
-void Stack::printStack(){
-	node *cur = top;
-	int count = 0;
-	while (cur != nullptr){
-		std::cout << "item " << count++ << cur->data << endl;
-		cur = cur->next;
-	}
-}
-
 void Stack::makeEmpty(){
 	node *cur = top;
 	node *temp;
@@ -26,7 +17,7 @@ void Stack::makeEmpty(){
 	top = nullptr;
 }
 
-void Stack::push(ItemType *item){
+void Stack::push(ItemType item){
 	node *n = createNode(item);
 	insertNodeToHead(n);
 }
@@ -34,12 +25,12 @@ void Stack::push(ItemType *item){
 ItemType Stack::pop()
 {
 	node *temp;
-	ItemType *item;
+	ItemType item;
 
 	//check stack validity
 	if (isEmpty()){
 		cout << "Stack underflow!\n";
-		exit(1);
+		exit(1); //TODO: find other solution for this
 	}
 
 	//get new top
@@ -49,8 +40,9 @@ ItemType Stack::pop()
 	//delete top
 	top = top->next;
 	delete temp;
+	size--;
 
-	return *item;
+	return item;
 }
 
 Stack::~Stack()
@@ -58,7 +50,7 @@ Stack::~Stack()
 	makeEmpty();
 }
 
-Stack::node * Stack::createNode(ItemType *item){
+Stack::node* Stack::createNode(ItemType item){
 	//init node
 	node *n = new node;
 	n->data = item;

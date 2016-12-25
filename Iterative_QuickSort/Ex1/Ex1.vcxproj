@@ -111,11 +111,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="recursive.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="General.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="ItemType.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>

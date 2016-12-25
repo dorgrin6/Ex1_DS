@@ -3,45 +3,41 @@
  *
  */
 #include <iostream>
-#include "General.h"
+#include "QuickSort.h"
 #include "Stack.h"
 using namespace  std;
 
 void main(){
-	/*
-	int *arr; // array to sort
+	int *arr1; // array1 to sort with recursion quickSort
+	int *arr2; // array2 (same as array1) to sort with iteration quickSort
 	int n; // size of arr
 
-	
 	cin >> n;
-	arr = new int[n];
+	arr1 = new int[n];
+	arr2 = new int[n];
 
 	//recieve array integers
 	for (int i = 0; i < n; i++) {
-		cin >> arr[i];
+		cin >> arr1[i];
+		arr2[i] = arr1[i];
 	}
 
-	cout << "Before sort\n";
-	printArr(arr, n);
+	cout << "Before sort:\n";
+	printArr(arr1, n);
+	printArr(arr2, n);
+	cout << endl;
 
-	recQuickSort(arr, 0, n-1);
+	recQuickSort(arr1, 0, n-1);
+	itrQuickSort(arr2, 0, n - 1);
 
-
-	cout << "After sort\n";
-	printArr(arr, n);
+	cout << "After sort:\n";
+	printArr(arr1, n);
+	printArr(arr2, n);
+	cout << endl;
 	
 	cout << "Ended\n";
 	getchar();	getchar();	getchar();
-	delete[] arr;
-	*/
-
-	Stack s;
-	ItemType item;
-	item.setLine(1);
-	item.setValue(2);
-	s.push(&item);
-	s.printStack();
-	ItemType item2 = s.pop();
-	cout << item2.getLine()<<","<<item2.getValue() << endl;
-	getchar();
+	delete[] arr1;
+	delete[] arr2;
+	
 }
