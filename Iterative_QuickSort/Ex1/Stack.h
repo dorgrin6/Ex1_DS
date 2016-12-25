@@ -19,7 +19,7 @@ public:
 	node *getTop() const { return top; }
 	//makeEmpty: deletes all stack's nodes, inits stack
 	void makeEmpty();
-	//push: pushing item to stacl
+	//push: push item to stack
 	void push(ItemType item);
 	//pop: removes and returns the last element inserted onto stack
 	ItemType pop();

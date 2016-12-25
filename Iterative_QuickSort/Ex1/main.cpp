@@ -1,6 +1,7 @@
 /*
- * 
- *
+ * IterativeQuickSort
+ * Enter the size of input to sort, then enter the integers to sort with spaces between them.
+ * Made by Idan Goor and Dor Grinshpan
  */
 #include <iostream>
 #include "QuickSort.h"
@@ -13,6 +14,13 @@ void main(){
 	int n; // size of arr
 
 	cin >> n;
+	//TODO: validity check: assert whether only numbers can be submitted
+	if (n<0){
+		cout << "Array size can't be negative\n";
+		exit(1);
+	}
+
+
 	arr1 = new int[n];
 	arr2 = new int[n];
 
