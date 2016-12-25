@@ -41,4 +41,7 @@ void main(){
 	item.setValue(2);
 	s.push(&item);
 	s.printStack();
+	ItemType item2 = s.pop();
+	cout << item2.getLine()<<","<<item2.getValue() << endl;
+	getchar();
 }

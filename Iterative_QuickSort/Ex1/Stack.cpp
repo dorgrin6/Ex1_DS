@@ -5,7 +5,7 @@ void Stack::printStack(){
 	node *cur = top;
 	int count = 0;
 	while (cur != nullptr){
-		std::cout << "item " << count++ << " Line:" << cur->data->getLine() << std::endl;
+		std::cout << "item " << count++ << cur->data << endl;
 		cur = cur->next;
 	}
 }
@@ -13,11 +13,17 @@ void Stack::printStack(){
 void Stack::makeEmpty(){
 	node *cur = top;
 	node *temp;
+
+	//delete all nodes
 	while (cur != nullptr){
 		temp = cur;
 		cur = cur->next;
 		delete temp;
 	}
+
+	//init members
+	size = 0;
+	top = nullptr;
 }
 
 void Stack::push(ItemType *item){
@@ -27,11 +33,23 @@ void Stack::push(ItemType *item){
 
 ItemType Stack::pop()
 {
-	node *temp = top;
-	ItemType *item = top->data;
+	node *temp;
+	ItemType *item;
+
+	//check stack validity
+	if (isEmpty()){
+		cout << "Stack underflow!\n";
+		exit(1);
+	}
+
+	//get new top
+	temp = top;
+	item = top->data;
 	
+	//delete top
 	top = top->next;
 	delete temp;
+
 	return *item;
 }
 
@@ -61,4 +79,5 @@ void Stack::insertNodeToHead(node *n)
 
 	size++;
 }
+
 
