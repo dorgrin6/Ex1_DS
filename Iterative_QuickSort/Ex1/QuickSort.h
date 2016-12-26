@@ -1,11 +1,14 @@
-#include <stdlib.h>
-#include <time.h>
-#include "Stack.h"
 
 #ifndef _QUICKSORT_H_
 #define _QUICKSORT_H_
 
-const int notFound = -1;
+
+#include <stdlib.h>
+#include <time.h>
+#include "Stack.h"
+
+const int notFound = -1;//signals value wasn't found
+
 //chooseRandomPivot: chooses random pivot in array and switches it with arr[0]
 void chooseRandomPivot(int arr[], int size);
 //partition: partitions array around pivot

@@ -30,7 +30,7 @@ ItemType Stack::pop()
 	//check stack validity
 	if (isEmpty()){
 		cout << "Stack underflow!\n";
-		exit(1); //TODO: find other solution for this
+		exit(1);
 	}
 
 	//get new top

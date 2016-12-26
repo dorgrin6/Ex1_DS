@@ -28,6 +28,8 @@ public:
 	void setPivot(int _pvt) { pvt = _pvt; }
 	//setLine: sets the line of item
 	void setLine(LINE _line) { line = _line; }
+
+
 };
 
 #endif

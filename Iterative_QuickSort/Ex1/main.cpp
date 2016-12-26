@@ -1,7 +1,9 @@
 /*
  * IterativeQuickSort
- * Enter the size of input to sort, then enter the integers to sort with spaces between them.
- * Made by Idan Goor and Dor Grinshpan
+ * 
+ * Enter the amount of integers to sort, then enter the integers to sort with spaces between them.
+ * 
+ * Made by Idan Goor and Dor Grinshpan 
  */
 #include <iostream>
 #include "QuickSort.h"
@@ -14,9 +16,10 @@ void main(){
 	int n; // size of arr
 
 	cin >> n;
-	//TODO: validity check: assert whether only numbers can be submitted
+
+	//check size validity
 	if (n<0){
-		cout << "Array size can't be negative\n";
+		cout << "Input size can't be negative\n";
 		exit(1);
 	}
 
@@ -24,13 +27,13 @@ void main(){
 	arr1 = new int[n];
 	arr2 = new int[n];
 
-	//recieve array integers
+	//recieve array of integers
 	for (int i = 0; i < n; i++) {
 		cin >> arr1[i];
 		arr2[i] = arr1[i];
 	}
 
-	cout << "Before sort:\n";
+	//before sort
 	printArr(arr1, n);
 	printArr(arr2, n);
 	cout << endl;
@@ -38,13 +41,13 @@ void main(){
 	recQuickSort(arr1, 0, n-1);
 	itrQuickSort(arr2, 0, n - 1);
 
-	cout << "After sort:\n";
+	//after sort
 	printArr(arr1, n);
 	printArr(arr2, n);
 	cout << endl;
 	
-	cout << "Ended\n";
-	getchar();	getchar();	getchar();
+	//getchar(); getchar(); //only for testing
+
 	delete[] arr1;
 	delete[] arr2;
 	
